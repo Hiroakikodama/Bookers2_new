@@ -1,5 +1,23 @@
-<div>User info</div>
-
-<div>New book</div>
-
-<div>Books</div>
+<div class="container">
+	<p>フラッシュメッセージ</p>
+	<div class="row">
+		<%= render 'books/list', books: @books %>
+		<div class="col">
+			<h2>Books</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Opinion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

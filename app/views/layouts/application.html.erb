@@ -11,37 +11,41 @@
 
 <body>
   <div>
+    <nav>
+      <span>Bookers</span>
+    </nav>
     <ul>
     <% if user_signed_in? %>
       <li>
-        <%= link_to 'Home', user_path %>
+        <%= link_to 'Home', user_path(current_user) %>
       </li>
       <li>
-        <%= link_to 'User', users_index_path %>
+        <%= link_to 'User', users_path %>
       </li>
       <li>
         <%= link_to 'Books', books_path %>
       </li>
       <li>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </li>
 
     <% else %>
 
       <li>
-        <%= link_to 'Home', "#" %>
+        <%= link_to 'Home', root_path %>
       </li>
       <li>
         <%= link_to 'About', "#" %>
       </li>
       <li>
-        <%= link_to 'sign up', "#" %>
+        <%= link_to 'sign up', new_user_registration_path %>
       </li>
       <li>
-        <%= link_to 'login', "#" %>
+        <%= link_to 'login', new_user_session_path %>
       </li>
     <% end %>
     </ul>
   </div>
+  <%= yield %>
 </body>
 </html>
