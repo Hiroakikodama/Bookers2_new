@@ -9,12 +9,13 @@
 					</tr>
 					<tr>
 						<th>introduction</th>
+						<p><%= link_to 'Edit', edit_user_path(@user) %></p>
 					</tr>
 				</tbody>
 			</table>
 
 			<h2>New book</h2>
-			<%= form_for(books) do |f| %>
+			<%= form_for @book do |f| %>
 
 			<p>Title</p>
 			<%= f.text_field :title %>

@@ -1,19 +1,9 @@
 <div class="container">
 	<p>フラッシュメッセージ</p>
 	<div class="row">
-		<div class="col">
-			<h2>User info</h2>
+		
+		<%= render 'books/list', books: @books %>
 
-			<h2>New book</h2>
-			<%= form_for(@book) do |f| %>
-
-			<p>Title</p>
-			<%= f.text_field :title %>
-
-			<p>Opinion</p>
-			<%= f.text_area :body %>
-			<% end %>
-		</div>
 		<div class="col">
 			<h2>Users</h2>
 		</div>
