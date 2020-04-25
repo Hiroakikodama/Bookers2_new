@@ -1,7 +1,7 @@
-<div class="col">
+
 			<h2>User info</h2>
-			<!-- <%  %> -->
-			<table>
+			<%= attachment_image_tag user, :profile_image, class: "img-circle pull-left profile-thumb", fallback: "no-image.jpg", size: "60×60" %>
+			<table class="table">
 				<tbody>
 					<tr>
 						<th>name</th>
@@ -9,21 +9,32 @@
 					</tr>
 					<tr>
 						<th>introduction</th>
-						<p><%= link_to 'Edit', edit_user_path(@user) %></p>
+						<p><%= user.introduction %></p>
 					</tr>
 				</tbody>
 			</table>
+			<div class="row">
+				<%= link_to edit_user_path(current_user) do %>
+					<i class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_6144"></i>
+				<% end %>
+			</div>
 
 			<h2>New book</h2>
-			<%= form_for @book do |f| %>
+			<%= form_for(book) do |f| %>
 
-			<p>Title</p>
-			<%= f.text_field :title %>
+			<div class="field row">
+				<h4>Title</h4>
+				<%= f.text_field :title, class: "col-xs-12 book_title" %>
+			</div>
 
-			<p>Opinion</p>
-			<%= f.text_area :body %>
+			<div class="field row">
+				<h4>Opinion</h4>
+				<%= f.text_area :body, class: "col-xs-12 book_body" %>
+				<br>
+			</div>
 
-			<br>
-			<%= f.submit 'Create Book' %>
+			<div class="actions row">
+				<%= f.submit 'Create Book',class: "btn btn-primary col-xs-12" %>
+				<br>
+			</div>
 			<% end %>
-		</div>
